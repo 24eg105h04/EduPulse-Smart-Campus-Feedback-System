@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Advisory - Edu Pulse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background-color: #4e73df;
+            color: white;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #2e59d9;
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            background-color: #f8f9fc;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .navbar {
+            background: white;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .risk-low {
+            color: green;
+            font-weight: bold;
+        }
+
+        .risk-medium {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .risk-high {
+            color: red;
+            font-weight: bold;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Edu Pulse</h2>
+        <a href="dashboard.jsp">Dashboard</a>
+        <a href="performance.html">Performance</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="../login.html">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="navbar">
+            <h2>Learning Advisory</h2>
+        </div>
+
+        <!-- Risk Summary -->
+        <div class="card">
+            <h3>Risk Assessment</h3>
+            <p>Your current risk level is: 
+                <span class="risk-medium">Medium</span>
+            </p>
+            <p>Reason: Low attendance and moderate performance in DBMS.</p>
+        </div>
+
+        <!-- Weak Subject -->
+        <div class="card">
+            <h3>Weak Subject Identified</h3>
+            <p><strong>Database Management Systems (DBMS)</strong></p>
+            <p>Current Total Score: 34/50</p>
+            <p>Attendance: 60%</p>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="card">
+            <h3>Recommended Actions</h3>
+            <ul>
+                <li>Increase attendance to at least 80%.</li>
+                <li>Practice SQL queries daily (minimum 1 hour).</li>
+                <li>Revise normalization and indexing concepts.</li>
+                <li>Attend faculty doubt-clearing sessions.</li>
+                <li>Take weekly self-assessment tests.</li>
+            </ul>
+        </div>
+
+        <!-- Study Plan -->
+        <div class="card">
+            <h3>Suggested Study Plan</h3>
+            <p>
+                📅 Allocate 2 hours per day for DBMS revision.<br>
+                📘 Focus on weak modules first.<br>
+                📝 Attempt at least 20 practice problems weekly.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

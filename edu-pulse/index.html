@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edu Pulse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 40px;
+            background-color: #4e73df;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: #4e73df;
+            cursor: pointer;
+        }
+
+        .features {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .feature-box {
+            display: inline-block;
+            width: 250px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f9fc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div><strong>Edu Pulse</strong></div>
+        <div>
+            <a href="#">Home</a>
+            <a href="login.html">Login</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>Smart Student Performance & Learning Advisory System</h1>
+        <p>Empowering institutions with intelligent performance insights.</p>
+        <button onclick="window.location.href='login.html'">
+            Get Started
+        </button>
+    </div>
+
+    <div class="features">
+        <h2>Key Features</h2>
+
+        <div class="feature-box">
+            <h3>📊 Performance Analytics</h3>
+            <p>Track academic performance in real-time.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>⚠ Risk Prediction</h3>
+            <p>Identify at-risk students early.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>🎯 Learning Advisory</h3>
+            <p>Personalized improvement suggestions.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Edu Pulse | Academic Project
+    </footer>
+
+</body>
+</html>

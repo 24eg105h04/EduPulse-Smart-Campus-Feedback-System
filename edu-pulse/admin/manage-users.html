@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Users - Edu Pulse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 220px;
+            background: #4e73df;
+            color: white;
+            height: 100vh;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background: #2e59d9;
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+            background: #f8f9fc;
+        }
+
+        .form-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+        }
+
+        button {
+            padding: 8px;
+            background: #1cc88a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #17a673;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #4e73df;
+            color: white;
+        }
+
+        .delete-btn {
+            background: #e74a3b;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Edu Pulse</h2>
+    <a href="dashboard.jsp">Dashboard</a>
+    <a href="manage-users.html">Manage Users</a>
+    <a href="../login.html">Logout</a>
+</div>
+
+<div class="main">
+    <h2>User Management</h2>
+
+    <!-- Add User Form -->
+    <div class="form-card">
+        <form onsubmit="addUser(event)">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+
+            <select id="role" required>
+                <option value="">Select Role</option>
+                <option value="Student">Student</option>
+                <option value="Faculty">Faculty</option>
+                <option value="Admin">Admin</option>
+            </select>
+
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+    <!-- User Table -->
+    <div class="top-bar">
+        <h3>Users List</h3>
+        <div>Total Users: <span id="totalCount">0</span></div>
+    </div>
+
+    <table id="userTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </table>
+</div>
+
+<script>
+function addUser(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const role = document.getElementById("role").value;
+
+    const table = document.getElementById("userTable");
+
+    const row = table.insertRow();
+    row.insertCell(0).innerText = name;
+    row.insertCell(1).innerText = email;
+    row.insertCell(2).innerText = role;
+
+    const actionCell = row.insertCell(3);
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerText = "Delete";
+    deleteBtn.className = "delete-btn";
+    deleteBtn.onclick = function () {
+        table.deleteRow(row.rowIndex);
+        updateCount();
+    };
+    actionCell.appendChild(deleteBtn);
+
+    document.querySelector("form").reset();
+    updateCount();
+}
+
+function updateCount() {
+    const table = document.getElementById("userTable");
+    document.getElementById("totalCount").innerText = table.rows.length - 1;
+}
+</script>
+
+</body>
+</html>
